@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisy Registrasi</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: #f1b9d4; 
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            width: 60%; 
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f873aa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #e6e6fa;
+            font-weight: bold;
+        }
+        select, input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+            width: 95%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <form>
+            <table>
+                <tr>
+                    <th colspan="2">Nama Lengkap</th>
+                    <th colspan="2">Tempat,tanggl lahir</th>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" name="fullName" placeholder="Nama Lengkap"></td>
+                    <td colspan="2"><input type="text" name="place birth" placeholder="Tempat,tanggal lahir"></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Alamat</th>
+                    <th colspan="2">E-mail</th>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" name="address" placeholder="Alamat"></td>
+                    <td colspan="2"><input type="email" name="email" placeholder="E-mail"></td>
+                </tr>
+                <tr>
+                    <th>No HP</th>
+                    <th>Agama</th>
+                    <th>Pekerjaan</th>
+                    <th>Jenis Kelamin</th>
+                </tr>
+                <tr>
+                    <td><input type="tel" name="phone" placeholder="No HP"></td>
+                    <td>
+                        <select name="religion">
+                            <option value="Islam">Islam</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Buddha">Buddha</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Konghucu">Konghucu</option>
+                            <option value="other">Lainnya</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="job">
+                            <option value="wiraswasta">wiraswasta</option>
+                            <option value="pns">PNS</option>
+                            <option value="tni">TNI</option>
+                            <option value="polri">Polri</option>
+                            <option value="dokter">Dokter</option>
+                            <option value="programmer">Programmer</option>
+                            <option value="guru">Guru</option>
+                            <option value="pedagang">Pedagang</option>
+                            <option value="buruh">Buruh</option>
+                            <option value="dosen">Dosen</option>
+                            <option value="tidk bekerja">Tidak bekerja</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="gender">
+                            <option value="male">Laki-laki</option>
+                            <option value="female">Perempuan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>NIK / No KTP</th>
+                    <th>URL Website</th>
+                    <th>URL Tiktok</th>
+                    <th>URL Facebook</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="nik" placeholder="NIK / No KTP"></td>
+                    <td><input type="text" name="website" placeholder="URL Website"></td>
+                    <td><input type="text" name="tiktok" placeholder="URL Tiktok"></td>
+                    <td><input type="text" name="facebook" placeholder="URL Facebook"></td>
+                </tr>
+                <tr>
+                    <th>Nama Ayah</th>
+                    <th>Alamat Ayah</th>
+                    <th>Nama Ibu</th>
+                    <th>Alamat Ibu</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="fatherName" placeholder="Nama Ayah"></td>
+                    <td><input type="text" name="fatherAddress" placeholder="Alamat Ayah"></td>
+                    <td><input type="text" name="motherName" placeholder="Nama Ibu"></td>
+                    <td><input type="text" name="motherAddress" placeholder="Alamat Ibu"></td>
+                </tr>
+                <tr>
+                    <th>Pekerjaan Ayah</th>
+                    <th>No HP Ayah</th>
+                    <th>Pekerjaan Ibu</th>
+                    <th>No HP Ibu</th>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="fatherJob">
+                            <option value="wiraswasta">wiraswasta</option>
+                            <option value="pns">PNS</option>
+                            <option value="tni">TNI</option>
+                            <option value="polri">Polri</option>
+                            <option value="dokter">Dokter</option>
+                            <option value="programmer">Programmer</option>
+                            <option value="guru">Guru</option>
+                            <option value="pedagang">Pedagang</option>
+                            <option value="buruh">Buruh</option>
+                            <option value="dosen">Dosen</option>
+                            <option value="tidak bekerja">Tidak bekerja</option>
+                        </select>
+                    </td>
+                    <td><input type="tel" name="fatherPhone" placeholder="No HP Ayah"></td>
+                    <td>
+                        <select name="motherJob">
+                            <option value="swasta">Swasta</option>
+                            <option value="pns">PNS</option>
+                            <option value="tni">TNI</option>
+                            <option value="polri">Polri</option>
+                            <option value="dokter">Dokter</option>
+                            <option value="programmer">Programmer</option>
+                            <option value="guru">Guru</option>
+                            <option value="pedagang">Pedagang</option>
+                            <option value="buruh">Buruh</option>
+                            <option value="dosen">Dosen</option>
+                            <option value="tidak bekerja">Tidak bekerja</option>
+                        </select>
+                    </td>
+                    <td><input type="tel" name="motherPhone" placeholder="No HP Ibu"></td>
+                </tr>
+                <tr>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th colspan="2">Re-type Password</th>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" name="username" placeholder="Username"></td>
+                    <td colspan="2"><input type="password" name="password" placeholder="Password"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: center;">
+                        <input type="submit" value="SUBMIT">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div class="back-button">
+            <form action="index.html" method="get">
+                <input type="submit" value="Kembali">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+</body>
+</html>

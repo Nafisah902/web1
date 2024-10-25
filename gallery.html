@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisy Gallery</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">Daisy Web</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="profile.html">profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="navbar" style="background-color: #fd94ce;">
+    </nav>
+
+      <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #e98181;
+    }
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 10px;
+        justify-content: center;
+    }
+    .gallery img {
+        width: 300px;
+        height: 310px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        border-radius: 20px;
+    }
+    .gallery img:hover {
+        transform: scale(1.1);
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        max-height: 90%;
+    }
+    .modal img {
+        max-width: 80%;
+        max-height: 80%;
+    }
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+    }
+    .arrow {
+        font-size: 50px;
+        color: white;
+        cursor: pointer;
+        user-select: none;
+    }
+    .arrow.left {
+        margin-right: 20px;
+    }
+    .arrow.right {
+        margin-left: 20px;
+    }
+</style>
+</head>
+<body>
+<article style="text-align: center;">
+<h2>Gallery</h2>
+</article>
+
+<div class="gallery">
+<img src="gallery/daisy1.jpeg" alt="Gambar 1">
+<img src="gallery/foto1.jpeg" alt="Gambar 2">
+<img src="gallery/daisy2.jpeg" alt="Gambar 3">
+<img src="gallery/foto2.jpeg" alt="Gambar 4">
+<img src="gallery/daisy3.jpeg" alt="Gambar 5">
+<img src="gallery/foto3.jpeg" alt="Gambar 6">
+<img src="gallery/daisy4.jpeg" alt="Gambar 7">
+<img src="gallery/foto4.jpeg"Gambar 8">
+<img src="gallery/daisy5.jpeg" alt="Gambar 9">
+<img src="gallery/foto5.jpeg" alt="Gambar 10">
+<img src="gallery/daisy6.jpeg" alt="Gambar 11">
+<img src="gallery/foto6.jpeg" alt="Gambar 12">
+</div>
+
+<div id="myModal" class="modal">
+<span class="close">&times;</span>
+<span class="arrow left">&#10094;</span>
+<div class="modal-content">
+    <img id="modal-img" src="" alt="Zoomed Image">
+</div>
+<span class="arrow right">&#10095;</span>
+</div>
+
+<script>
+const gallery = document.querySelectorAll('.gallery img');
+const modal = document.getElementById('myModal');
+const modalImg = document.getElementById('modal-img');
+const closeModal = document.querySelector('.close');
+const leftArrow = document.querySelector('.arrow.left');
+const rightArrow = document.querySelector('.arrow.right');
+let currentIndex;
+
+// Open modal and show clicked image
+gallery.forEach((img, index) => {
+    img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+        currentIndex = index;
+    });
+});
+
+// Close modal
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Close modal when clicking outside the image
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+// Show previous image
+leftArrow.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = gallery.length - 1; // Loop back to the last image
+    }
+    modalImg.src = gallery[currentIndex].src;
+});
+
+// Show next image
+rightArrow.addEventListener('click', () => {
+    if (currentIndex < gallery.length - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // Loop back to the first image
+    }
+    modalImg.src = gallery[currentIndex].src;
+});
+
+</script>
+<head>
+<body>
+    <hr>
+    <footer class="bg-dark text-white mt-5 p-4">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <h5>About Me</h5>
+                  <p>This is Daisy's Website creation exercise.</p>
+              </div>
+              <div class="col-md-4">
+                  <h5>Link Cepat</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="index.html" class="text-white">Home</a></li>
+                      <li><a href="Contact.html" class="text-white">Contact</a></li>
+                      <li><a href="login.html" class="text-white">Login</a></li>
+                      <li><a href="Gallery.html" class="text-white">Gallery</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                <p>Contact </p>
+                <ul>
+                    <li><a href="nafnafisah19@gmail.com">Email: nafnafisah19@gmail.com</a></li>
+                    <li><a href="https://wa.me/085642016323" target="_blank">WhatsApp: 085642016323</a></li>
+                    <li><a href="https://www.instagram.com/n.fisahh/profilecard/?igsh=MWZncHRkM3dlNzducg==" target="_blank">Instagram: @n.fisahh</a></li>
+                    <li><a href="https://x.com/KaShinzou75804?t=otpOpx5QZ8KKbpr1pbDyGQ&s=08" target="_blank">Twitter: @KaShinzou75804?t</a></li>
+                </ul>
+            </div>
+            
+          <div class="text-center mt-4">
+              <p>&copy; 2024 Daisy Web. Copyright.</p>
+          </div>
+      </div>
+  </footer>
+
+</body>
+</head>
+</body>
